@@ -1,0 +1,40 @@
+﻿<Window x:Class="AvitoXml.Wpf.Windows.ProfilesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AvitoXml.Wpf.Windows"
+        mc:Ignorable="d"
+        x:Name="Window"
+        Title="Профили" Height="220" Width="400" MinHeight="220" MaxHeight="220" MinWidth="400"
+        SizeToContent="Height">
+
+    <StackPanel x:Name="Panel">
+        <Menu Height="25" VerticalAlignment="Top">
+            <MenuItem Header="Новый профиль" Click="MenuItem_Click" ></MenuItem>
+        </Menu>
+        <DataGrid x:Name="Profiles" 
+                  ItemsSource="{Binding Source=UserProfiles}"  
+                  AutoGenerateColumns="False" 
+                  CanUserResizeColumns="True" 
+                  Height="180">
+            <DataGrid.Columns>
+                <DataGridTextColumn Visibility="Hidden" Header="ID" Binding="{Binding Path=ID}"/>
+                <DataGridTextColumn Header="Название" Binding="{Binding Path=Name}"/>
+                <DataGridTextColumn  Header="Контактоное лицо" Binding="{Binding Path=Manager}"/>
+                <DataGridTextColumn Width="*" Header="Номер" Binding="{Binding Path=Phone}"/>
+            </DataGrid.Columns>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Просмотр"
+                     Click="ViewClick"/>
+                    <MenuItem Header="Редактировать"
+                     Click="EditClick"/>
+                    <MenuItem Header="Удалить"
+                     Click="DeleteClick"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+        </DataGrid>
+
+    </StackPanel>
+</Window>

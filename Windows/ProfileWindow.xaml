@@ -1,0 +1,66 @@
+﻿<Window x:Class="AvitoXml.Wpf.Windows.ProfileWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AvitoXml.Wpf.Windows"
+        mc:Ignorable="d"
+        Title="Профиль пользователя" 
+         Width="300" 
+        SizeToContent="Height"
+        x:Name="Window">
+    <StackPanel Margin="5">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" 
+                   Grid.Row="0"
+                   Content="Название профиля"/>
+            <TextBox Grid.Column="1" 
+                     Grid.Row="0"
+                     Text="{Binding Path=Name,Mode=TwoWay}"
+                     x:Name="Name"/>
+            <Label Grid.Column="0" 
+                   Grid.Row="1"
+                   Content="Контактное лицо"/>
+            <TextBox Grid.Column="1" 
+                     Grid.Row="1"
+                     Text="{Binding Path=Manager,Mode=TwoWay}"
+                     x:Name="Manager"/>
+            <Label Grid.Column="0" 
+                   Grid.Row="2"
+                   Content="Адрес"/>
+            <TextBox Grid.Column="1"
+                     Grid.Row="2"
+                     Text="{Binding Path=Adress,Mode=TwoWay}"
+                     x:Name="Adress"/>
+            <Label Grid.Column="0" 
+                   Grid.Row="3"
+                   Content="Телефонный номер"/>
+            <TextBox Grid.Column="1" 
+                     Grid.Row="3"
+                     Text="{Binding Path=Phone,Mode=TwoWay}"
+                     x:Name="Phone"/>
+            <Label Grid.Column="0" 
+                   Grid.Row="4"
+                   Content="Префикс"/>
+            <TextBox Grid.Column="1" 
+                     Grid.Row="4"
+                     Text="{Binding Path=Prefix,Mode=TwoWay}"
+                     x:Name="Prefix"/>
+        </Grid>
+        <Button HorizontalAlignment="Right" 
+                Click="OkBtn_Click"
+                x:Name="OkBtn">Продолжить</Button>
+    </StackPanel>
+</Window>

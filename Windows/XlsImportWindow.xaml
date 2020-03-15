@@ -1,0 +1,45 @@
+﻿<Window x:Class="AvitoXml.Wpf.Windows.XlsImportWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AvitoXml.Wpf.Windows"
+        mc:Ignorable="d"
+        x:Name="Window"
+        Title="XlsImportWindow"
+        Height="450"
+        Width="400">
+    <StackPanel>
+        <Grid VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Импорт обьявлений из:" />
+                <Label x:Name="FileNameLabel"
+                       Content="FilePath" />
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right"
+                        VerticalAlignment="Center">
+                <Button Width="25"
+                        x:Name="OpenBtn"
+                        Click="OpenBtn_Click">...</Button>
+            </StackPanel>
+        </Grid>
+        <StackPanel x:Name="Parametrs"
+                    Height="Auto"
+                    Width="Auto"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Stretch">
+        </StackPanel>
+        <Button x:Name="AddBtn"
+                Click="AddBtn_Click">
+            Добавить
+        </Button>
+        <Button x:Name="CreateBtn"
+                Click="CreateBtn_Click">
+            Создать обьявления
+        </Button>
+        <Button x:Name="ExportBtn"
+                Click="ExportBtn_Click">
+            Экспорт в XML
+        </Button>
+    </StackPanel>
+</Window>
